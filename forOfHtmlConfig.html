@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>forOfHtmlConfig</title>
+	<style type="text/css">
+	*{padding: 0;margin: 0;}
+	body{background-color: white;}
+	.loginBox{
+		width: 388px;
+		height: 200px;
+		background-color: white;
+		margin: 15% auto 0 auto;
+		border: solid 1px #393D49;
+		border-radius: 3px;
+		box-shadow:5px 5px 5px #393D49; 
+	}
+	h1{
+		width: 98%;
+		height: 35px;
+		padding-left: 2%;
+		text-align: left;
+		display: block;
+		line-height: 45px;
+		font-size: 22px;
+		font-family: 微软雅黑;
+		color: #009688;
+
+	}
+	input{
+		display: block;
+		text-align: center;
+	}
+	.forNum,.url{
+		text-align: left;
+		width: 88%;
+		height: 28px;
+		margin: 15px auto 0 auto;
+	}
+
+	.btn{
+		width: 38%;
+		height: 38px;
+		margin: 20px auto 0 auto;
+		border: solid 2px #5FB878;
+		background-color: #fff;  
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){ 
+		var wo1 = String(document.location);
+		var wo2 = wo1.indexOf("stutas=");
+		var stutas = wo1.substring(wo2+7,wo1.length);
+		if(stutas != 'pass'){
+			window.location.href = "index.html?error=2";
+		}
+	} 
+	
+	</script>
+</head>
+<body>
+	<div class="loginBox">
+		<h1>Supalle小程序配置</h1>
+		<form method="get" action="forOfHtml.html">
+			<input class="forNum" id="forNum" name="forNum" type="text" value="" placeholder="-请输入刷新时间（毫秒）-"/>
+			<input class="url" id="url" name="url" type="text" value="" placeholder="-请输入刷新链接-"/>
+			<input class="btn" type="submit" value="提交"/>
+		</form>
+	</div>
+</body>
+</html>

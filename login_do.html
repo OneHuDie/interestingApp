@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Load……</title>
+	<script type="text/javascript">
+	var wo1 = String(document.location);
+	var wo2 = wo1.indexOf("pwd=");
+	var pwd = wo1.substring(wo2+4,wo1.length);
+	if(pwd != '305'){
+		window.location.href = "index.html?error=1";
+	}else{
+		window.location.href = "forOfHtmlConfig.html?stutas=pass";
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

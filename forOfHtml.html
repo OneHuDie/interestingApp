@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Supalle刷新ing</title>
+</head>
+<style type="text/css">
+	*{padding: 0;margin: 0;}
+
+</style>
+	<script type="text/javascript">
+	window.onload=function(){ 
+		var wo1 = String(document.location);
+		var wo2 = wo1.indexOf("forNum=");
+		var wo3 = wo1.indexOf("url=");
+		var forNum = wo1.substring(wo2+7,wo3-1);
+		var url = wo1.substring(wo3+4,wo1.length);
+		for (var i = 0;url.indexOf("%3A") > 0; i++) {
+			var a = url.indexOf("%3A");
+			url = url.substring(0,a) + ":" +url.substring(a+3,url.length);
+		};
+		for (var i = 0;url.indexOf("%2F") > 0; i++) {
+			var a = url.indexOf("%2F");
+			url = url.substring(0,a) + "/" +url.substring(a+3,url.length);
+		};
+		for (var i = 0;url.indexOf("%3D") > 0; i++) {
+			var a = url.indexOf("%3D");
+			url = url.substring(0,a) + "=" +url.substring(a+3,url.length);
+		};
+		for (var i = 0;url.indexOf("%3F") > 0; i++) {
+			var a = url.indexOf("%3F");
+			url = url.substring(0,a) + "?" +url.substring(a+3,url.length);
+		};
+		// var url_1 = url.substring(0,url.indexOf("%3A%2F%2F"));
+		// var url = url_1 + "://"+ url.substring(url.indexOf("%3A%2F%2F")+9,url.length);
+		// alert(url);
+		document.getElementById('forOfHtml').src=url;
+
+		if (window.innerHeight)
+		winHeight = window.innerHeight;
+		else if ((document.body) && (document.body.clientHeight))
+		winHeight = document.body.clientHeight;
+		document.getElementById('forOfHtml').height = winHeight - 4;
+		// alert(forNum);
+		// var num= Math.round(Math.random()*10)
+		setTimeout("window.location.href=window.location.href;",parseInt(forNum));
+	} 
+	
+	</script>
+<body>
+	<iframe frameborder=0 border=0 id="forOfHtml" width="100%" height="500px" src=""></iframe>
+</body>
+</html>
